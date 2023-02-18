@@ -175,6 +175,33 @@ int main()
 	cout << sizeof(p7) << endl;
 	cout << sizeof(p8) << endl;
 
+	cout << endl;
+
+	// Reference (alias given to a variable)
+	// useful in parameter parsing
+
+	int int1 = 10;
+	// declared and initialized reference
+	int  &r = int1;
+	// changing either the actual value or reference value will affect both
+	int1 = 25;
+
+	int int2 = 30;
+	r = int2;
+	cout << int1 << endl << r << endl;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	return 0;
 }
