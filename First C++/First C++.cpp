@@ -13,7 +13,6 @@ struct Rectangle1
 	int length;
 	int breadth;
 };
-
 struct Square
 {
 	int length;
@@ -97,6 +96,16 @@ void fun4 (Rectangle1 *r)
 	r ->length = 20;
 	cout << "Length: " << r->length << endl << "Breadth: " << r->breadth << endl;
 }
+// create object of type rectangle using pointer in heap, returning address of the structure
+Rectangle1 * fun5()
+{
+	Rectangle1* p;
+	p = new  Rectangle1;
+	p->length = 5;
+	p->breadth =5 ;
+
+	return p;
+}
 // structure as parameter
 // call by value
 // will not modify the value
@@ -109,6 +118,15 @@ int valueArea(Square r1)
 int referenceArea(Square &r1)
 {
 	return r1.length * r1.breadth;
+}
+void initialise(Square *s, int l, int b )
+{
+	s->length = l;
+	s->breadth = b;
+}
+int squareArea(Square s)
+{
+	return s.length * s.breadth;
 }
 // call by address
 void changeLength(Square *p, int l)
@@ -347,16 +365,19 @@ int main()
 	fun4(&rectangle2);
 	printf("Length: %d \nBreadth: %d\n", rectangle2.length, rectangle2.breadth);
 
+	Rectangle1* ptr2 = fun5();
 
+	cout << "Length: " << ptr2->length << endl << "Breadth: " << ptr2->breadth << endl;
 
+	// Structures and Functions
 
+	Square square1;
 
-
-
-
-
-
-
+	initialise(&square1, 5, 5);
+	int areaOfSquare = squareArea(square1);
+	changeLength(&square1, 5);
+	cout << "Area of square: " << areaOfSquare;
+		 
 
 	return 0;
 }
