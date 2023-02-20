@@ -18,7 +18,19 @@ struct Square
 
 Square s1, s2, s3;
 
+// Functions
+/*
+ * 1. Pass by value
+ * 2. Pass by address
+ * 3. Pass by reference
+*/
 
+// Function declaration
+int add(int a, int b)
+{
+	int c = a + b;
+	return (c);
+}
 
 int main()
 {
@@ -210,12 +222,27 @@ int main()
 	p9->length = 20;
 
 	cout << p9->length << endl;
+	cout << p9->breadth << endl;
 
+	// dynamic allocation ( create the object in heap )
+	Rectangle1* p10;
+	p10 = new Rectangle1;
 
+	// Using the functions
+	int numberOne;
+	cout << "Enter your first number: ";
+	cin >> numberOne;
+
+	int numberSecond;
+	cout << "Enter your first number: ";
+	cin >> numberSecond;
+
+	int totalNumber = add(numberOne, numberSecond);
+
+	cout << totalNumber << endl;
 
 
 
 
 	return 0;
 }
-
