@@ -32,6 +32,33 @@ int add(int a, int b)
 	return (c);
 }
 
+
+// pass by value
+void valueSwap(int x, int y)
+{
+	int temp;
+	temp = x;
+	x = y;
+	y = temp;
+}
+// pass by address
+void addressSwap(int *x, int *y)
+{
+	// * to deference
+	int temp;
+	temp = *x;
+	*x = *y;
+	*y = temp;
+}
+// pass by reference
+void referenceSwap(int &x, int &y)
+{
+	int temp;
+	temp = x;
+	x = y;
+	y = temp;
+}
+
 int main()
 {
 	// Topic 1: Arrays
@@ -229,11 +256,10 @@ int main()
 	p10 = new Rectangle1;
 
 	// Using the functions
-	int numberOne;
+	int numberOne, numberSecond;
 	cout << "Enter your first number: ";
 	cin >> numberOne;
 
-	int numberSecond;
 	cout << "Enter your first number: ";
 	cin >> numberSecond;
 
@@ -241,8 +267,10 @@ int main()
 
 	cout << totalNumber << endl;
 
+	addressSwap(&numberOne, &numberSecond);
 
-
+	cout << "First Number: " << numberOne;
+	cout << "Second Number: " << numberSecond;
 
 	return 0;
 }
