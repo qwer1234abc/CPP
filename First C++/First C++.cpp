@@ -377,16 +377,40 @@ int main()
 	initialise(&square1, 5, 5);
 	int areaOfSquare = squareArea(square1);
 	changeLength(&square1, 5);
-	cout << "Area of square: " << areaOfSquare;
+	cout << "Area of square: " << areaOfSquare << endl;
 
 	// Usin a class called Cirle
 
-	Circle circle1;
-
-	circle1.initialiseCircle(15);
+	// Using the initialise method as the class name
+	Circle circle1(10);
 
 	circle1.changeRadius(20);
-	cout << "Area of circle: " << circle1.areaCircle();
+	cout << "Area of circle: " << circle1.areaCircle() << endl;
+
+	// Monolithic Program
+	int length1, breadth1;
+
+	cout << "Enter length and breadth: ";
+	cin >> length1 >> breadth1;
+
+	int area1 = length1 * breadth1;
+	int permeter1 = 2 * (length1 + breadth1);
+
+	cout << "Area: " << area1 << endl << "Perimeter: " << permeter1 << endl;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	return 0;

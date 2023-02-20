@@ -9,7 +9,7 @@ private:
 	int radius;
 
 public:
-	void initialiseCircle(int r)
+	Circle(int r)
 	{
 		radius = r;
 	}
