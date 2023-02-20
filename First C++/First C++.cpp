@@ -398,7 +398,7 @@ int main()
 
 	cout << "Area: " << area1 << endl << "Perimeter: " << permeter1 << endl;
 
-
+	// Modular Program using methods instead
 
 
 
