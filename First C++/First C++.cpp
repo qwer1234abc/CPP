@@ -58,6 +58,28 @@ void referenceSwap(int &x, int &y)
 	x = y;
 	y = temp;
 }
+// Array as parameter
+// Array can only be passed by address
+// can use * instead of []
+void fun(int A[], int n)
+{
+	A[0] = 15;
+	for (int i = 0; i < n; i++)
+	{
+		cout << A[i] << endl;
+	}
+}
+int * fun2(int size)
+{
+	int* p;
+	p = new int[size];
+
+	for (int i = 0; i < size ;i ++)
+	{
+		p[i] = i + 1;
+	}
+	return p;
+}
 
 int main()
 {
@@ -265,12 +287,30 @@ int main()
 
 	int totalNumber = add(numberOne, numberSecond);
 
-	cout << totalNumber << endl;
+	cout << "Total Number: " << totalNumber << endl;
 
 	addressSwap(&numberOne, &numberSecond);
 
-	cout << "First Number: " << numberOne;
-	cout << "Second Number: " << numberSecond;
+	cout << "First Number: " << numberOne << endl;
+	cout << "Second Number: " << numberSecond << endl;
+
+	// Array as parameter
+	int AC[] = { 2, 4, 6, 8, 10 };
+	int number = 5;
+	fun(AC, number);
+	
+	for (int x: AC)
+	{
+		cout << x << " ";
+	}
+	int* ptr, sz = 5;
+
+	ptr = fun2(sz);
+
+	for (int i = 0;i < sz; i++)
+	{
+		cout << ptr[i] << endl;
+	}
 
 	return 0;
 }
