@@ -8,6 +8,11 @@
 using namespace std;
 
 // Structure declaration
+struct Rectangle1
+{
+	int length;
+	int breadth;
+};
 
 struct Square
 {
@@ -80,7 +85,36 @@ int * fun2(int size)
 	}
 	return p;
 }
-
+// using value
+void fun3(Rectangle1 r)
+{
+	r.length = 20;
+	cout << "Length: " << r.length << endl << "Breadth: " << r.breadth << endl;
+}
+// using address
+void fun4 (Rectangle1 *r)
+{
+	r ->length = 20;
+	cout << "Length: " << r->length << endl << "Breadth: " << r->breadth << endl;
+}
+// structure as parameter
+// call by value
+// will not modify the value
+int valueArea(Square r1)
+{
+	return r1.length * r1.breadth;
+}
+// call by parameter
+// modify the value
+int referenceArea(Square &r1)
+{
+	return r1.length * r1.breadth;
+}
+// call by address
+void changeLength(Square *p, int l)
+{
+	p->length = l;
+}
 int main()
 {
 	// Topic 1: Arrays
@@ -143,8 +177,7 @@ int main()
 		char dept[10]; // 10 bytes
 		char address[50]; // 50 bytes
 	};
-	Student s;
-	s.roll = 10;
+	Student s = {1, {2}, {2}, {3}};
 
 	struct Card
 	{
@@ -258,11 +291,6 @@ int main()
 
 	// Pointer to Structure
 
-	struct Rectangle1
-	{
-		int length;
-		int breadth;
-	};
 	Rectangle rectangle1 = { 10,5 };
 	Rectangle* p9 = &rectangle1;
 	rectangle1.length = 15;
@@ -303,7 +331,8 @@ int main()
 	{
 		cout << x << " ";
 	}
-	int* ptr, sz = 5;
+	cout << endl;
+	int *ptr, sz = 5;
 
 	ptr = fun2(sz);
 
@@ -311,6 +340,23 @@ int main()
 	{
 		cout << ptr[i] << endl;
 	}
+
+	Rectangle1 rectangle2 = { 10,5 };
+	fun3(rectangle2);
+	printf("Length: %d \nBreadth: %d\n", rectangle2.length, rectangle2.breadth);
+	fun4(&rectangle2);
+	printf("Length: %d \nBreadth: %d\n", rectangle2.length, rectangle2.breadth);
+
+
+
+
+
+
+
+
+
+
+
 
 	return 0;
 }
