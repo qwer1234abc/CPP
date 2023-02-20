@@ -2,6 +2,9 @@
 #include <array>
 #include <stdio.h>
 #include <stdlib.h>
+#include <queue>
+#include <stack>
+#include <algorithm>
 using namespace std;
 
 // Structure declaration
@@ -182,7 +185,7 @@ int main()
 
 	int int1 = 10;
 	// declared and initialized reference
-	int  &r = int1;
+	int& r = int1;
 	// changing either the actual value or reference value will affect both
 	int1 = 25;
 
@@ -190,13 +193,23 @@ int main()
 	r = int2;
 	cout << int1 << endl << r << endl;
 
+	cout << endl;
 
+	// Pointer to Structure
 
+	struct Rectangle1
+	{
+		int length;
+		int breadth;
+	};
+	Rectangle rectangle1 = { 10,5 };
+	Rectangle* p9 = &rectangle1;
+	rectangle1.length = 15;
+	// assigning value from pointer (2 ways)
+	(*p9).length = 5;
+	p9->length = 20;
 
-
-
-
-
+	cout << p9->length << endl;
 
 
 
