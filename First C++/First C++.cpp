@@ -5,6 +5,7 @@
 #include <queue>
 #include <stack>
 #include <algorithm>
+#include "Circle.h"
 using namespace std;
 
 // Structure declaration
@@ -377,7 +378,16 @@ int main()
 	int areaOfSquare = squareArea(square1);
 	changeLength(&square1, 5);
 	cout << "Area of square: " << areaOfSquare;
-		 
+
+	// Usin a class called Cirle
+
+	Circle circle1;
+
+	circle1.initialiseCircle(15);
+
+	circle1.changeRadius(20);
+	cout << "Area of circle: " << circle1.areaCircle();
+
 
 	return 0;
 }
