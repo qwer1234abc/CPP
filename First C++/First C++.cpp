@@ -134,6 +134,61 @@ void changeLength(Square *p, int l)
 {
 	p->length = l;
 }
+
+
+
+// OOP
+struct OOPRectangle
+{
+	int length;
+	int breadth;
+
+void OOPRectangleInit(int l, int b)
+{
+	length = l;
+	breadth = b;
+}
+
+int OOPRectangleArea()
+{
+	return length * breadth;
+}
+
+int OOPRectanglePerimeter()
+{
+	return 2 * (length * breadth);
+}
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 int main()
 {
 	// Topic 1: Arrays
@@ -400,13 +455,17 @@ int main()
 
 	// Modular Program using methods instead
 
+	// Using OOP
 
+	OOPRectangle r5 = { 0,0 };
 
+	int l, b;
+	printf("Enter length and breadth: ");
+	cin >> l >> b;
 
+	r5.OOPRectangleInit(l, b);
 
-
-
-
+	cout << "Area of Rectangle: " << r5.OOPRectangleArea() << endl << "Perimeter of Rectangle: " << r5.OOPRectanglePerimeter() << endl;
 
 
 
