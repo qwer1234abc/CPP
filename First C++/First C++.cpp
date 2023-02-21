@@ -162,32 +162,83 @@ int OOPRectanglePerimeter()
 };
 
 
+class Square2
+{
+private:
+	int length;
+	int breadth;
+public:
+	Square2()
+	{
+		length = breadth = 1;
+	}
+	Square2(int l, int b);
 
+	int area();
+	int perimeter();
 
+	int getLength()
+	{
+		return length;
+	}
+	void setLength(int l)
+	{
+		length = l;
+	}
+	// Destructor
 
+	~Square2();
 
+};
+Square2::Square2(int l, int b)
+{
+	length = l;
+	breadth = b;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
+int Square2::area()
+{
+	return length * breadth;
+}
+int Square2 :: perimeter()
+{
+	return 2 * (length * breadth);
+}
+Square2:: ~Square2()
+{
+	
+}
+template <class T>
+class Arithmetic
+{
+private:
+	T a;
+	T b;
+public:
+	Arithmetic(T a, T b);
+	T add();
+	T sub();
+};
+template <class T>
+Arithmetic<T>:: Arithmetic(T a, T b)
+{
+	this->a = a;
+	this->b = b;
+}
+template <class T>
+T Arithmetic<T>:: add()
+{
+	T c;
+	c = a + b;
+	return c;
+}
+template <class T>
+T Arithmetic<T>::sub()
+{
+	T c;
+	c = a - b;
+	return c;
+}
 
 int main()
 {
@@ -468,9 +519,19 @@ int main()
 	cout << "Area of Rectangle: " << r5.OOPRectangleArea() << endl << "Perimeter of Rectangle: " << r5.OOPRectanglePerimeter() << endl;
 
 
+	Square2 s5(10, 5);
+	cout << s5.area();
+	cout << s5.perimeter();
+	s5.setLength(20);
+	cout << s5.getLength();
 
 
-
-
+	// Template class
+	// <int> specifies the <T> to be integer if <string> is used, <T> will all become strings
+	Arithmetic <int> ar(10, 5);
+	cout << ar.add();
+	// now we specify it to become a float
+	Arithmetic <float> ar1(1.5, 1.2);
+	cout << ar1.add();
 	return 0;
 }
